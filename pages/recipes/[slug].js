@@ -36,6 +36,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       recipe: items[0],
     },
+    revalidate: 1,
   };
 };
 
@@ -49,6 +50,7 @@ const RecipeDetails = ({ recipe }) => {
           src={`https:` + featuredImage.fields.file.url}
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
+          alt="Thumbnail Image"
         />
         <h2> {title} </h2>
       </div>
